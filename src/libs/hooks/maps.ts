@@ -3,6 +3,7 @@ import { createCustomEqual } from "fast-equals";
 import { isLatLngLiteral } from "@googlemaps/typescript-guards";
 
 const deepCompareEqualsForMaps = createCustomEqual(
+  // @ts-ignore
   (deepEqual) => (a: any, b: any) => {
     if (
       isLatLngLiteral(a) ||
@@ -21,7 +22,8 @@ export function useDeepCompareEffectForMaps(
   callback: React.EffectCallback,
   dependencies: any[]
 ) {
-  useEffect(callback, [...dependencies.map(useDeepCompareMemoize), callback]);
+  // @ts-ignore
+  useEffect(callback, dependencies.map(useDeepCompareMemoize));
 }
 
 export function useDeepCompareMemoize(value: any) {
