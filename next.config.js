@@ -10,7 +10,10 @@ const nextConfig = {
     appId: "1:402932538759:web:307bf70d2c0633d8fd0722",
     measurementId: "G-JSGRG3H7W5",
     MAP_API_KEY: "AIzaSyBOck91hRudV6fWDk_g6K9o73eRCWrSrx8"
-  }
+  },
+  images : {
+    unoptimized : true
+  },
 }
 
 module.exports = nextConfig
